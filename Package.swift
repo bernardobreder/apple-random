@@ -23,6 +23,6 @@ let package = Package(
             dependencies: []),
         .testTarget(
             name: "RandomTests",
-            dependencies: ["apple-random"]),
+            dependencies: ["Random"]),
     ]
 )
