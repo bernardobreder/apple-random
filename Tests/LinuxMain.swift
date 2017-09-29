@@ -1,25 +1,6 @@
-//
-//  RandomTests.swift
-//  Random
-//
-//  Created by Bernardo Breder.
-//
-//
-
 import XCTest
-@testable import RandomTests
-
-extension RandomTests {
-
-	static var allTests : [(String, (RandomTests) -> () throws -> Void)] {
-		return [
-			("test", test),
-		]
-	}
-
-}
+@testable import apple_randomTests
 
 XCTMain([
-	testCase(RandomTests.allTests),
+    testCase(apple_randomTests.allTests),
 ])
-

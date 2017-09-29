@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class SecureRandom {
+public class Random {
     
     public class func generate(_ max: UInt32 = UInt32.max) -> UInt32 {
         #if os(Linux)
@@ -25,13 +25,13 @@ public class SecureRandom {
     public class func randomText(_ length: Int) -> String {
         var chars = [UInt8]()
         while chars.count < length {
-            let type = generate(3)
+            let type: UInt32 = generate(3)
             if type == 0 {
-                chars.append(UInt8(SecureRandom.generate(26)) + 97)
+                chars.append(UInt8(Random.generate(26)) + 97)
             } else if type == 1 {
-                chars.append(UInt8(SecureRandom.generate(26)) + 65)
+                chars.append(UInt8(Random.generate(26)) + 65)
             } else {
-                chars.append(UInt8(SecureRandom.generate(10)) + 48)
+                chars.append(UInt8(Random.generate(10)) + 48)
             }
         }
         return String(bytes: chars, encoding: .ascii)!

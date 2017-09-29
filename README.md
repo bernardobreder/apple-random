@@ -1,2 +1,8 @@
-# apple-random
-[iOS][MacOS][Linux] Module of random operation
+# Random
+
+This module has Random operation.
+
+```swift
+let password = Random.generatePassword()
+let number0_9 = Random.generate(9)
+```
